@@ -49,15 +49,27 @@ This guide will help you set up the environment to run and explore the matrix op
 
 To verify that everything is installed correctly, you can run a simple example:
 
+### Option 1: Run Python Script
+
 ```bash
 python src/examples/matrix_multiplication.py
 ```
 
+### Option 2: Run Jupyter Notebook (Recommended)
+
+For the best interactive experience with rich visualizations:
+
+```bash
+jupyter notebook src/examples/matrix_multiplication.ipynb
+```
+
 If the example runs without errors and displays visualizations, your setup is complete.
 
-## Running Jupyter Notebooks
+## Using Jupyter Notebooks (Recommended)
 
-Some examples may be provided as Jupyter notebooks. To run these:
+Examples are provided as both standalone Python scripts and interactive Jupyter notebooks. We highly recommend the notebook versions for better visualizations and interactivity.
+
+To use Jupyter notebooks:
 
 1. Start the Jupyter server:
 
@@ -65,7 +77,11 @@ Some examples may be provided as Jupyter notebooks. To run these:
    jupyter notebook
    ```
 
-2. Navigate to the notebook file (.ipynb) in the browser window that opens
+2. A browser window will open automatically. Navigate to the `src/examples` directory and click on any `.ipynb` file to open it
+
+3. You can run each cell individually by selecting it and pressing `Shift+Enter`, or run the entire notebook via the "Run" menu
+
+4. To make the most of the interactive visualizations, run each cell in sequence from top to bottom
 
 ## Troubleshooting
 
