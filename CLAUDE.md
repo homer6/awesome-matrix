@@ -34,15 +34,28 @@ An educational collection of matrix operations and utilities with PyTorch exampl
 - Emphasize dimensional thinking and tensor shape transformations
 
 ## Planned Examples
-The README.md lists planned examples in these categories:
-- Basics (matrix creation, shapes, basic operations, memory layout, data types)
-- Linear Algebra Fundamentals (matrix multiplication, dot products, eigenvalues, etc.)
-- Matrix Decompositions (LU, QR, SVD, Cholesky, etc.)
-- Tensor Operations (tensor contraction, Einstein notation, reshaping)
-- Visualization Techniques (heatmaps, 3D visualizations, animations)
-- Applications (graphics, ML, signal processing, quantum computing, etc.)
+When building new examples, always refer to the README.md for guidance on what to implement next. The README.md contains a detailed outline of planned examples organized in these categories:
 
-When building new examples, reference the README.md for the complete list of planned topics.
+- **Basics**: Matrix creation, shapes, basic operations, memory layout, data types
+- **Linear Algebra Fundamentals**: Matrix multiplication, dot products, cross products, eigenvalues, etc.
+- **Matrix Decompositions**: LU, QR, SVD, Cholesky, etc.
+- **Tensor Operations**: Tensor contraction, Einstein notation, reshaping
+- **Visualization Techniques**: Heatmaps, 3D visualizations, animations
+- **Applications**: Graphics, ML, signal processing, quantum computing, etc.
+
+Each category in the README.md contains detailed sub-topics that should be implemented as examples. For each topic, reference the README.md to ensure the example covers all the relevant aspects mentioned there.
+
+### Currently Implemented Examples
+1. Matrix Multiplication (01_matrix_multiplication)
+2. Dot and Inner Products (02_dot_and_inner_products)
+3. Cross Products and Outer Products (03_cross_and_outer_products)
+
+### Next Examples to Implement
+Based on the README.md, the next topics to implement would be:
+1. Eigenvalues and eigenvectors (geometric interpretation, power iteration, applications in PCA)
+2. Vector spaces and subspaces (basis, orthogonality, projection, change of basis)
+3. Matrix properties (determinant, trace, rank, condition number)
+4. Special matrices (symmetric, orthogonal, Toeplitz, sparse)
 
 ## Example Source Format
 - Source code for examples is kept in `src/examples/` directory
