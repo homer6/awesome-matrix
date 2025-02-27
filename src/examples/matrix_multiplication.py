@@ -4,6 +4,11 @@
 # This example demonstrates matrix multiplication with PyTorch and 
 # builds intuition for how dimensions work when multiplying matrices.
 
+# %% [markdown]
+# ## Setup and Imports
+# First, we'll import the necessary libraries and set up our visualization tools.
+
+# %%
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
@@ -14,6 +19,11 @@ from typing import Tuple, List
 colors = [(0.8, 0.8, 1), (0.1, 0.3, 0.8)]  # Light blue to darker blue
 cmap = LinearSegmentedColormap.from_list("custom_blue", colors, N=100)
 
+# %% [markdown]
+# ## Matrix Visualization Function
+# We'll create a function to visualize matrices as heatmaps with annotations.
+
+# %%
 def visualize_matrix(matrix: torch.Tensor, title: str = "") -> None:
     """
     Visualize a matrix as a heatmap.
@@ -46,6 +56,11 @@ def visualize_matrix(matrix: torch.Tensor, title: str = "") -> None:
     plt.tight_layout()
     plt.show()
 
+# %% [markdown]
+# ## Matrix Multiplication Visualization
+# Now we'll create a function to visualize matrix multiplication operations with dimensions.
+
+# %%
 def visualize_matrix_multiplication(A: torch.Tensor, B: torch.Tensor) -> None:
     """
     Visualize matrix multiplication A @ B with dimensions.
@@ -101,6 +116,11 @@ def visualize_matrix_multiplication(A: torch.Tensor, B: torch.Tensor) -> None:
     plt.subplots_adjust(top=0.85)
     plt.show()
 
+# %% [markdown]
+# ## Understanding Matrix Multiplication as Dot Products
+# This visualization demonstrates how matrix multiplication can be understood as a series of dot products.
+
+# %%
 def demonstrate_dot_product() -> None:
     """
     Demonstrate how matrix multiplication can be understood as dot products.
@@ -167,6 +187,11 @@ def demonstrate_dot_product() -> None:
     plt.tight_layout()
     plt.show()
 
+# %% [markdown]
+# ## Exploring Matrix Dimension Rules
+# Understanding dimension compatibility is crucial for matrix multiplication.
+
+# %%
 def explore_dimension_rules() -> None:
     """
     Explore compatible and incompatible dimensions for matrix multiplication.
@@ -220,6 +245,11 @@ def explore_dimension_rules() -> None:
     except RuntimeError as e:
         print(f"Error: {e}")
 
+# %% [markdown]
+# ## Practical Examples
+# Let's explore different matrix multiplication scenarios with visualizations.
+
+# %%
 def main() -> None:
     """Main function to run all examples."""
     print("\n" + "="*80)
@@ -265,6 +295,10 @@ def main() -> None:
     print("\nMatrix multiplication is one of the most fundamental operations in linear algebra.")
     print("It forms the basis for many algorithms in machine learning, computer graphics,")
     print("and numerical computing.")
+
+# %% [markdown]
+# ## Conclusion
+# Matrix multiplication is a cornerstone operation in linear algebra and forms the foundation for many computational algorithms. Understanding both the mathematical definition and the dimensional constraints is crucial for working with matrices effectively.
 
 if __name__ == "__main__":
     main()
