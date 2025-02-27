@@ -8,7 +8,9 @@ A curated list of awesome matrix operations, tutorials, visualizations, and reso
 
 For installation instructions and setup guidance, see the [Installation Guide](INSTALL.md).
 
-To explore example code and demonstrations, check out the [examples directory](src/examples/).
+To explore example code and demonstrations, check out the [examples directory](examples/).
+
+Source code for all examples is maintained in the [src/examples](src/examples/) directory. See [Compiling Examples](docs/COMPILE.md) for information on how examples are compiled from source to notebooks.
 
 ## Contents
 

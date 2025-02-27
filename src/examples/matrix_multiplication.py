@@ -1,10 +1,8 @@
-"""
-Matrix Multiplication: Building Intuition
-=========================================
-
-This example demonstrates matrix multiplication with PyTorch and 
-builds intuition for how dimensions work when multiplying matrices.
-"""
+# %% [markdown]
+# # Matrix Multiplication: Building Intuition
+# 
+# This example demonstrates matrix multiplication with PyTorch and 
+# builds intuition for how dimensions work when multiplying matrices.
 
 import torch
 import numpy as np
