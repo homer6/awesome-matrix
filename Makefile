@@ -34,6 +34,7 @@ execute_example:
 		echo "Usage: make execute_example EXAMPLE=example_name"; \
 		exit 1; \
 	fi
+	@echo "Executing examples/$(EXAMPLE).ipynb..."
 	@jupyter nbconvert --execute --to notebook --inplace examples/$(EXAMPLE).ipynb
 	@echo "Executed examples/$(EXAMPLE).ipynb"
 

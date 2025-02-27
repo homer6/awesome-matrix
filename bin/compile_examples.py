@@ -94,6 +94,24 @@ See [COMPILE.md](docs/COMPILE.md) for more information.
     notebook.cells.insert(0, warning_cell)
     return notebook
 
+def prepare_notebook_for_execution(notebook):
+    """Prepare notebook for execution by adding metadata to cells."""
+    for i, cell in enumerate(notebook.cells):
+        if cell.cell_type == 'code':
+            # Initialize empty outputs list if not present
+            if not hasattr(cell, 'outputs') or cell.outputs is None:
+                cell.outputs = []
+            
+            # Add execution count if not present
+            if not hasattr(cell, 'execution_count') or cell.execution_count is None:
+                cell.execution_count = None
+                
+            # Make sure metadata exists
+            if not hasattr(cell, 'metadata'):
+                cell.metadata = {}
+    
+    return notebook
+
 def main():
     """
     Main function for the script.
@@ -113,20 +131,16 @@ def main():
     if not create_notebook(source_file, output_file):
         sys.exit(1)
         
-    # Add warning cell
+    # Add warning cell and prepare for execution
     with open(output_file, 'r') as f:
         nb = nbformat.read(f, as_version=4)
     
     nb = add_warning_cell(nb, source_file)
-    
-    with open(output_file, 'w') as f:
-        nbformat.write(nb, f)
-        
-    print(f"Added warning cell to {output_file}")
+    nb = prepare_notebook_for_execution(nb)
     
     # Fix the last cell if it contains __main__ check
     for i, cell in enumerate(nb.cells):
-        if '__name__ == "__main__"' in cell.source and cell.cell_type == 'markdown':
+        if cell.cell_type == 'markdown' and '__name__ == "__main__"' in cell.source:
             parts = cell.source.split('if __name__ == "__main__":')
             if len(parts) > 1:
                 # Update the markdown cell to exclude the main check
@@ -135,11 +149,23 @@ def main():
                 # Add a new code cell with the main check
                 main_cell = new_code_cell('if __name__ == "__main__":\n    main()')
                 nb.cells.append(main_cell)
-                
-                # Save the updated notebook
-                with open(output_file, 'w') as f:
-                    nbformat.write(nb, f)
                 print(f"Fixed main check in {output_file}")
+    
+    # Save the updated notebook
+    with open(output_file, 'w') as f:
+        nbformat.write(nb, f)
+        
+    print(f"Added warning cell to {output_file}")
+    
+    # Ask if user wants to execute immediately (when running interactively)
+    if sys.stdout.isatty():  # Only prompt if in interactive terminal
+        response = input(f"Execute notebook {output_file} now? [y/N] ")
+        if response.lower() == 'y':
+            import subprocess
+            print(f"Executing {output_file}...")
+            subprocess.run(["jupyter", "nbconvert", "--execute", "--to", "notebook", 
+                           "--inplace", output_file])
+            print(f"Successfully executed {output_file}")
 
 
 if __name__ == "__main__":
