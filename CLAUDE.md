@@ -4,14 +4,19 @@
 An educational collection of matrix operations and utilities with PyTorch examples to develop intuition around tensors and n-dimensional thinking.
 
 ## Commands
-- **Run examples:** `python src/examples/[example_name].py`
+- **Run examples:** `python src/examples/[dir]/[file].py`  
 - **Run tests:** `pytest tests/`
 - **Run single test:** `pytest tests/test_file.py::test_function`
 - **Install deps:** `pip install -r requirements.txt`
-- **Compile examples:** `make compile_example EXAMPLE=example_name`
-- **Execute notebooks:** `make execute_example EXAMPLE=example_name`
-- **Compile and execute all:** `make compile_and_execute`
+- **Compile all examples:** `make compile`
+- **Compile example directory:** `make compile_example EXAMPLE=01_matrix_multiplication`
+- **Compile specific file:** `make compile_file EXAMPLE=01_matrix_multiplication/01_introduction`
+- **Execute all:** `make execute`
+- **Execute example directory:** `make execute_example EXAMPLE=01_matrix_multiplication`
+- **Execute specific file:** `make execute_file EXAMPLE=01_matrix_multiplication/01_introduction`
+- **Compile and execute:** `make compile_and_execute EXAMPLE=01_matrix_multiplication`
 - **Clean notebooks:** `make clean`
+- **Show help:** `make help`
 
 ## Code Style Guidelines
 - **Framework:** Use PyTorch for tensor/matrix operations

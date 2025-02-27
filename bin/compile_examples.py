@@ -115,21 +115,65 @@ def prepare_notebook_for_execution(notebook):
 def main():
     """
     Main function for the script.
-    Usage: python compile_examples.py <example_name>
+    Usage: python compile_examples.py <example_path> [--execute]
+    
+    Example paths:
+    - 01_matrix_multiplication - compiles all files in the directory
+    - 01_matrix_multiplication/01_introduction - compiles a specific file
     """
-    if len(sys.argv) < 2:
-        print("Usage: python compile_examples.py <example_name>")
-        return
+    import argparse
+    parser = argparse.ArgumentParser(description='Compile Python files to Jupyter notebooks')
+    parser.add_argument('example_path', help='Path to the example(s) to compile')
+    parser.add_argument('--execute', action='store_true', help='Execute the notebook after compilation')
+    args = parser.parse_args()
     
     # Get the project root directory
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     
-    example_name = sys.argv[1]
-    source_file = os.path.join(project_root, "src", "examples", f"{example_name}.py")
-    output_file = os.path.join(project_root, "examples", f"{example_name}.ipynb")
+    # Process the example path
+    example_path = args.example_path
+    execute = args.execute
+    
+    # Check if path has a slash, indicating a specific file
+    if '/' in example_path:
+        # Specific file within a directory
+        dir_name, file_name = example_path.split('/')
+        source_file = os.path.join(project_root, "src", "examples", dir_name, f"{file_name}.py")
+        output_dir = os.path.join(project_root, "examples", dir_name)
+        output_file = os.path.join(output_dir, f"{file_name}.ipynb")
+        
+        # Make sure the output directory exists
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Process single file
+        compile_and_process_file(source_file, output_file, execute)
+    else:
+        # Process all files in the directory
+        src_dir = os.path.join(project_root, "src", "examples", example_path)
+        output_dir = os.path.join(project_root, "examples", example_path)
+        
+        # Make sure the output directory exists
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Process all Python files
+        for source_file in sorted(os.listdir(src_dir)):
+            if source_file.endswith('.py'):
+                file_name = os.path.splitext(source_file)[0]
+                full_source_path = os.path.join(src_dir, source_file)
+                full_output_path = os.path.join(output_dir, f"{file_name}.ipynb")
+                compile_and_process_file(full_source_path, full_output_path, execute)
+
+def compile_and_process_file(source_file, output_file, execute=False):
+    """Compile a single file to notebook and optionally execute it."""
+    print(f"Processing {source_file}...")
+    
+    if not os.path.exists(source_file):
+        print(f"Source file {source_file} not found.")
+        return False
     
     if not create_notebook(source_file, output_file):
-        sys.exit(1)
+        print(f"Failed to create notebook from {source_file}")
+        return False
         
     # Add warning cell and prepare for execution
     with open(output_file, 'r') as f:
@@ -157,15 +201,15 @@ def main():
         
     print(f"Added warning cell to {output_file}")
     
-    # Ask if user wants to execute immediately (when running interactively)
-    if sys.stdout.isatty():  # Only prompt if in interactive terminal
-        response = input(f"Execute notebook {output_file} now? [y/N] ")
-        if response.lower() == 'y':
-            import subprocess
-            print(f"Executing {output_file}...")
-            subprocess.run(["jupyter", "nbconvert", "--execute", "--to", "notebook", 
-                           "--inplace", output_file])
-            print(f"Successfully executed {output_file}")
+    # Execute the notebook if requested
+    if execute:
+        import subprocess
+        print(f"Executing {output_file}...")
+        subprocess.run(["jupyter", "nbconvert", "--execute", "--to", "notebook", 
+                       "--inplace", output_file])
+        print(f"Successfully executed {output_file}")
+    
+    return True
 
 
 if __name__ == "__main__":
