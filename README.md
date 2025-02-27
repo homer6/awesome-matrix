@@ -2,6 +2,14 @@
 
 A curated list of awesome matrix operations, tutorials, visualizations, and resources focused on building intuition for n-dimensional thinking. This repository emphasizes educational content with PyTorch examples.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Getting Started
+
+For installation instructions and setup guidance, see the [Installation Guide](INSTALL.md).
+
+To explore example code and demonstrations, check out the [examples directory](src/examples/).
+
 ## Contents
 
 - [Basics](#basics)
