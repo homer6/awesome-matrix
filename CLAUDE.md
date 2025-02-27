@@ -33,6 +33,17 @@ An educational collection of matrix operations and utilities with PyTorch exampl
 - Include real-world applications for each concept
 - Emphasize dimensional thinking and tensor shape transformations
 
+## Planned Examples
+The README.md lists planned examples in these categories:
+- Basics (matrix creation, shapes, basic operations, memory layout, data types)
+- Linear Algebra Fundamentals (matrix multiplication, dot products, eigenvalues, etc.)
+- Matrix Decompositions (LU, QR, SVD, Cholesky, etc.)
+- Tensor Operations (tensor contraction, Einstein notation, reshaping)
+- Visualization Techniques (heatmaps, 3D visualizations, animations)
+- Applications (graphics, ML, signal processing, quantum computing, etc.)
+
+When building new examples, reference the README.md for the complete list of planned topics.
+
 ## Example Source Format
 - Source code for examples is kept in `src/examples/` directory
 - Compiled notebooks are generated in `examples/` directory
