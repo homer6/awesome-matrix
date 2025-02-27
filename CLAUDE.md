@@ -49,13 +49,14 @@ Each category in the README.md contains detailed sub-topics that should be imple
 1. Matrix Multiplication (01_matrix_multiplication)
 2. Dot and Inner Products (02_dot_and_inner_products)
 3. Cross Products and Outer Products (03_cross_and_outer_products)
+4. Eigenvalues and Eigenvectors (04_eigenvalues_eigenvectors)
 
 ### Next Examples to Implement
 Based on the README.md, the next topics to implement would be:
-1. Eigenvalues and eigenvectors (geometric interpretation, power iteration, applications in PCA)
-2. Vector spaces and subspaces (basis, orthogonality, projection, change of basis)
-3. Matrix properties (determinant, trace, rank, condition number)
-4. Special matrices (symmetric, orthogonal, Toeplitz, sparse)
+1. Vector spaces and subspaces (basis, orthogonality, projection, change of basis)
+2. Matrix properties (determinant, trace, rank, condition number)
+3. Special matrices (symmetric, orthogonal, Toeplitz, sparse)
+4. LU Decomposition (from the Matrix Decompositions section)
 
 ## Example Source Format
 - Source code for examples is kept in `src/examples/` directory
