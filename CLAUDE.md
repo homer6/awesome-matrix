@@ -50,13 +50,16 @@ Each category in the README.md contains detailed sub-topics that should be imple
 2. Dot and Inner Products (02_dot_and_inner_products)
 3. Cross Products and Outer Products (03_cross_and_outer_products)
 4. Eigenvalues and Eigenvectors (04_eigenvalues_eigenvectors)
+5. Vector Spaces and Subspaces (05_vector_spaces_subspaces)
+6. Matrix Properties (06_matrix_properties)
 
 ### Next Examples to Implement
 Based on the README.md, the next topics to implement would be:
-1. Vector spaces and subspaces (basis, orthogonality, projection, change of basis)
-2. Matrix properties (determinant, trace, rank, condition number)
-3. Special matrices (symmetric, orthogonal, Toeplitz, sparse)
-4. LU Decomposition (from the Matrix Decompositions section)
+1. LU Decomposition (from the Matrix Decompositions section)
+2. QR Decomposition 
+3. Singular Value Decomposition (SVD)
+4. Cholesky Decomposition
+5. Tensor Operations and Einstein Notation
 
 ## Example Source Format
 - Source code for examples is kept in `src/examples/` directory
