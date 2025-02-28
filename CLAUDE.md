@@ -46,24 +46,45 @@ When building new examples, always refer to the README.md for guidance on what t
 Each category in the README.md contains detailed sub-topics that should be implemented as examples. For each topic, reference the README.md to ensure the example covers all the relevant aspects mentioned there.
 
 ### Currently Implemented Examples
-1. Matrix Multiplication (01_matrix_multiplication)
-2. Dot and Inner Products (02_dot_and_inner_products)
-3. Cross Products and Outer Products (03_cross_and_outer_products)
-4. Eigenvalues and Eigenvectors (04_eigenvalues_eigenvectors)
-5. Vector Spaces and Subspaces (05_vector_spaces_subspaces)
-6. Matrix Properties (06_matrix_properties)
-7. LU Decomposition (07_lu_decomposition)
-8. QR Decomposition (08_qr_decomposition)
-9. Singular Value Decomposition (SVD) (09_singular_value_decomposition)
-10. Cholesky Decomposition (10_cholesky_decomposition)
-11. Tensor Operations and Einstein Notation (11_tensor_operations_einsum)
-12. Visualization Techniques (12_visualization_techniques)
+1. Matrix Multiplication ([01_matrix_multiplication](examples/01_matrix_multiplication/))
+2. Dot and Inner Products ([02_dot_and_inner_products](examples/02_dot_and_inner_products/))
+3. Cross Products and Outer Products ([03_cross_and_outer_products](examples/03_cross_and_outer_products/))
+4. Eigenvalues and Eigenvectors ([04_eigenvalues_eigenvectors](examples/04_eigenvalues_eigenvectors/))
+5. Vector Spaces and Subspaces ([05_vector_spaces_subspaces](examples/05_vector_spaces_subspaces/))
+6. Matrix Properties ([06_matrix_properties](examples/06_matrix_properties/))
+7. LU Decomposition ([07_lu_decomposition](examples/07_lu_decomposition/))
+8. QR Decomposition ([08_qr_decomposition](examples/08_qr_decomposition/))
+9. Singular Value Decomposition (SVD) ([09_singular_value_decomposition](examples/09_singular_value_decomposition/))
+10. Cholesky Decomposition ([10_cholesky_decomposition](examples/10_cholesky_decomposition/))
+11. Tensor Operations and Einstein Notation ([11_tensor_operations_einsum](examples/11_tensor_operations_einsum/))
+12. Visualization Techniques ([12_visualization_techniques](examples/12_visualization_techniques/))
 
 ### Next Examples to Implement
-Based on the README.md, the next topics to implement would be:
-1. Basics: Matrix creation, shapes, memory layout (from the Basics section)
-2. Applications: Computer graphics, machine learning (from the Applications section)
-3. Foundations: Special matrices and properties (expanding the Linear Algebra section)
+Based on the README.md and our current progress, the next topics to implement would be:
+
+1. **Basics (13_matrix_basics):** Matrix creation, indexing, shapes, and memory layout
+   - Creating matrices with PyTorch: zeros, ones, random, eye, diag
+   - Slicing and indexing techniques
+   - Shape manipulation (view, reshape, squeeze, unsqueeze)
+   - Memory layout and optimization (stride, contiguity)
+
+2. **Applications (14_computer_graphics):** Computer Graphics and 3D Transformations
+   - Rotation, translation, and scaling matrices
+   - Projection matrices
+   - Homogeneous coordinates
+   - 3D transformations and applications
+
+3. **Applications (15_machine_learning):** Machine Learning Applications
+   - Weight matrices and biases
+   - Attention mechanisms
+   - Convolutional filters as matrices
+   - Neural network transformation visualizations
+
+4. **Advanced Decompositions (16_eigendecomposition):** Eigendecomposition
+   - Relationship with SVD
+   - Symmetric eigendecomposition
+   - Power method and inverse iteration
+   - Applications in data analysis
 
 ## Example Source Format
 - Source code for examples is kept in `src/examples/` directory

@@ -62,27 +62,27 @@ Source code for all examples is maintained in the [src/examples](src/examples/) 
 
 *Essential operations for matrix manipulation*
 
-- Matrix multiplication  
+- [Matrix multiplication](examples/01_matrix_multiplication/)  
   - Standard matrix product (matmul)  
   - Batch matrix multiplication  
   - Optimizations and computational complexity  
-- Dot and inner products  
+- [Dot and inner products](examples/02_dot_and_inner_products/)  
   - Vector dot products  
   - Matrix-vector products  
   - Different inner product definitions  
-- Cross products and outer products  
+- [Cross products and outer products](examples/03_cross_and_outer_products/)  
   - Geometric interpretation  
   - Applications in physics  
   - Kronecker product  
-- Eigenvalues and eigenvectors  
+- [Eigenvalues and eigenvectors](examples/04_eigenvalues_eigenvectors/)  
   - Intuitive explanation and visualization  
   - Power iteration method  
   - Applications in PCA and spectral methods  
-- Vector spaces and subspaces  
+- [Vector spaces and subspaces](examples/05_vector_spaces_subspaces/)  
   - Basis and dimensionality  
   - Orthogonality and projection  
   - Change of basis  
-- Matrix properties  
+- [Matrix properties](examples/06_matrix_properties/)  
   - Determinant and trace  
   - Rank and nullity  
   - Positive definiteness  
@@ -97,15 +97,15 @@ Source code for all examples is maintained in the [src/examples](src/examples/) 
 
 *Techniques to factorize matrices*
 
-- LU decomposition  
+- [LU decomposition](examples/07_lu_decomposition/)  
   - Gaussian elimination  
   - Computational aspects  
   - Solving linear systems  
-- QR decomposition  
+- [QR decomposition](examples/08_qr_decomposition/)  
   - Gram-Schmidt process  
   - Householder reflections  
   - Applications in least squares  
-- Singular Value Decomposition (SVD)  
+- [Singular Value Decomposition (SVD)](examples/09_singular_value_decomposition/)  
   - Geometric interpretation  
   - Low-rank approximation  
   - Image compression with SVD  
@@ -114,7 +114,7 @@ Source code for all examples is maintained in the [src/examples](src/examples/) 
   - Relationship with SVD  
   - Symmetric eigendecomposition  
   - Power method and inverse iteration  
-- Cholesky decomposition  
+- [Cholesky decomposition](examples/10_cholesky_decomposition/)  
   - Properties of positive definite matrices  
   - Applications in sampling multivariate distributions  
   - Relationship to LU decomposition  
@@ -129,11 +129,10 @@ Source code for all examples is maintained in the [src/examples](src/examples/) 
 
 *Working with higher-dimensional data*
 
-- Tensor contraction  
+- [Tensor contraction and Einstein notation](examples/11_tensor_operations_einsum/)  
   - Summation over indices  
   - Relationship with matrix multiplication  
   - Example: CNN as tensor contraction  
-- Einstein notation  
   - Simplifying complex operations  
   - Index notation for tensors  
   - PyTorch einsum examples  
@@ -158,11 +157,12 @@ Source code for all examples is maintained in the [src/examples](src/examples/) 
 
 *Methods to visualize matrices and operations*
 
-- Heatmaps and colormaps  
+- [Visualization Techniques](examples/12_visualization_techniques/)  
+  - Heatmaps and colormaps  
   - Visualizing matrix values  
   - Correlation matrices  
   - Attention weights visualization  
-- 3D visualizations of transformations  
+  - 3D visualizations of transformations  
   - Linear transformations as geometric operations  
   - Visualizing eigenspaces  
   - Interactive transformation demos  
