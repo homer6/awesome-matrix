@@ -23,6 +23,7 @@ import time
 from PIL import Image
 import requests
 from io import BytesIO
+import scipy
 import scipy.sparse as sparse
 import scipy.sparse.linalg as spalg
 import matplotlib.patches as patches

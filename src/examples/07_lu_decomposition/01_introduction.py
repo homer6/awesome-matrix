@@ -19,6 +19,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.colors import LinearSegmentedColormap
 import time
+import scipy.linalg
 
 # For better looking plots
 plt.rcParams['figure.figsize'] = [10, 8]
@@ -277,10 +278,10 @@ def compare_lu_implementations(A):
     L_ours, U_ours = lu_decomposition(A)
     our_time = time.time() - start_time
     
-    # NumPy implementation
+    # NumPy implementation (using SciPy)
     A_np = A.numpy()
     start_time = time.time()
-    P_np, L_np, U_np = np.linalg.lu(A_np)
+    P_np, L_np, U_np = scipy.linalg.lu(A_np)
     np_time = time.time() - start_time
     
     # PyTorch implementation
