@@ -75,7 +75,8 @@ def visualize_matrix(matrix: torch.Tensor, title: str = "") -> None:
     plt.imshow(matrix_np, cmap=cmap)
     plt.colorbar(shrink=0.8)
     
-    # Add grid lines
+    # Enable minor ticks and add grid lines
+    plt.minorticks_on()
     plt.grid(which='minor', color='w', linestyle='-', linewidth=0.5)
     
     # Add row and column indices
@@ -85,12 +86,16 @@ def visualize_matrix(matrix: torch.Tensor, title: str = "") -> None:
                      ha="center", va="center", 
                      color="black" if matrix_np[i, j] < 0.7 else "white")
     
-    # Add dimension annotations
-    plt.title(f"{title}\nShape: {matrix_np.shape}")
-    plt.xlabel(f"Columns (n={matrix_np.shape[1]})")
-    plt.ylabel(f"Rows (m={matrix_np.shape[0]})")
+    # Add dimension annotations with actual dimensions
+    rows, cols = matrix_np.shape
+    plt.title(f"{title}\nShape: {rows}×{cols}")
+    plt.xlabel(f"Columns ({cols} columns)")
+    plt.ylabel(f"Rows ({rows} rows)")
     plt.tight_layout()
     plt.show()
+
+# %% [markdown]
+# Let's visualize our matrices:
 
 # %%
 # Visualize matrix A
@@ -106,4 +111,94 @@ visualize_matrix(B, "Matrix B")
 # - Matrix A is 2×3 (2 rows, 3 columns)
 # - Matrix B is 3×2 (3 rows, 2 columns)
 # 
-# In the next section, we'll explore how these matrices can be multiplied together.
+# Notice that the inner dimensions match: A has 3 columns and B has 3 rows.
+# This means we can multiply these matrices together!
+
+# %% [markdown]
+# ## 1.4 Matrix Multiplication Preview
+# 
+# When multiplying matrices, we can only multiply if the inner dimensions match:
+# - Matrix A with dimensions (m × n)
+# - Matrix B with dimensions (n × p)
+# 
+# The result C = A @ B will have dimensions (m × p).
+# 
+# Let's visualize our matrices and their multiplication:
+
+# %%
+def visualize_matrix_multiplication(A: torch.Tensor, B: torch.Tensor) -> torch.Tensor:
+    """
+    Visualize matrix multiplication A @ B with dimensions.
+    
+    Args:
+        A: First matrix (m × n)
+        B: Second matrix (n × p)
+    """
+    # Check compatibility
+    if A.shape[1] != B.shape[0]:
+        raise ValueError(f"Incompatible dimensions: A is {A.shape}, B is {B.shape}")
+    
+    # Perform the multiplication
+    C = A @ B
+    
+    # Create figure with 3 subplots
+    fig, axs = plt.subplots(1, 3, figsize=(16, 5))
+    
+    # Plot matrices
+    matrices = [A, B, C]
+    titles = [
+        f"Matrix A\n{A.shape[0]}×{A.shape[1]}", 
+        f"Matrix B\n{B.shape[0]}×{B.shape[1]}",
+        f"Result C = A @ B\n{C.shape[0]}×{C.shape[1]}"
+    ]
+    
+    for i, (matrix, title) in enumerate(zip(matrices, titles)):
+        matrix_np = matrix.detach().cpu().numpy()
+        im = axs[i].imshow(matrix_np, cmap=cmap)
+        axs[i].set_title(title)
+        
+        # Enable minor ticks
+        axs[i].minorticks_on()
+        axs[i].grid(which='minor', color='w', linestyle='-', linewidth=0.5)
+        
+        # Add text annotations
+        for r in range(matrix_np.shape[0]):
+            for c in range(matrix_np.shape[1]):
+                axs[i].text(c, r, f"{matrix_np[r, c]:.1f}", 
+                           ha="center", va="center", 
+                           color="black" if matrix_np[r, c] < 0.7 else "white")
+    
+    # Add a shared colorbar
+    fig.colorbar(im, ax=axs, shrink=0.6)
+    
+    # Add the operation text between plots
+    plt.figtext(0.31, 0.5, "@", fontsize=24)
+    plt.figtext(0.64, 0.5, "=", fontsize=24)
+    
+    # Add dimension explanation with actual dimensions
+    m, n = A.shape
+    n_check, p = B.shape
+    plt.suptitle(f"Matrix Multiplication: ({m}×{n}) @ ({n_check}×{p}) → ({m}×{p})\n"
+                f"The inner dimensions must match: {n} = {n_check}", fontsize=14)
+    
+    plt.tight_layout()
+    plt.subplots_adjust(top=0.85)
+    plt.show()
+    
+    return C
+
+# %%
+# Let's perform the matrix multiplication and visualize it
+C = visualize_matrix_multiplication(A, B)
+
+# %%
+# Print the actual computation
+print("Matrix multiplication result C = A @ B:")
+print(C)
+
+# Let's verify the dimensions
+print(f"\nMatrix A shape: {A.shape}")
+print(f"Matrix B shape: {B.shape}")
+print(f"Result C shape: {C.shape}")
+print("\nDimension rule: (m × n) @ (n × p) = (m × p)")
+print(f"In our case: ({A.shape[0]} × {A.shape[1]}) @ ({B.shape[0]} × {B.shape[1]}) = ({C.shape[0]} × {C.shape[1]})")
