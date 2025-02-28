@@ -58,29 +58,24 @@ Each category in the README.md contains detailed sub-topics that should be imple
 10. Cholesky Decomposition ([10_cholesky_decomposition](examples/10_cholesky_decomposition/))
 11. Tensor Operations and Einstein Notation ([11_tensor_operations_einsum](examples/11_tensor_operations_einsum/))
 12. Visualization Techniques ([12_visualization_techniques](examples/12_visualization_techniques/))
+13. Matrix Basics ([13_matrix_basics](examples/13_matrix_basics/))
 
 ### Next Examples to Implement
 Based on the README.md and our current progress, the next topics to implement would be:
 
-1. **Basics (13_matrix_basics):** Matrix creation, indexing, shapes, and memory layout
-   - Creating matrices with PyTorch: zeros, ones, random, eye, diag
-   - Slicing and indexing techniques
-   - Shape manipulation (view, reshape, squeeze, unsqueeze)
-   - Memory layout and optimization (stride, contiguity)
-
-2. **Applications (14_computer_graphics):** Computer Graphics and 3D Transformations
+1. **Applications (14_computer_graphics):** Computer Graphics and 3D Transformations
    - Rotation, translation, and scaling matrices
    - Projection matrices
    - Homogeneous coordinates
    - 3D transformations and applications
 
-3. **Applications (15_machine_learning):** Machine Learning Applications
+2. **Applications (15_machine_learning):** Machine Learning Applications
    - Weight matrices and biases
    - Attention mechanisms
    - Convolutional filters as matrices
    - Neural network transformation visualizations
 
-4. **Advanced Decompositions (16_eigendecomposition):** Eigendecomposition
+3. **Advanced Decompositions (16_eigendecomposition):** Eigendecomposition
    - Relationship with SVD
    - Symmetric eigendecomposition
    - Power method and inverse iteration

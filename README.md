@@ -37,18 +37,11 @@ Source code for all examples is maintained in the [src/examples](src/examples/) 
 
 *Fundamental concepts for understanding matrices*
 
-- Matrix creation and indexing  
-  - Creating matrices with PyTorch: zeros, ones, random, eye, diag  
-  - Slicing and indexing techniques  
+- [Matrix Basics](examples/13_matrix_basics/)
+  - [Creating matrices, indexing and slicing](examples/13_matrix_basics/01_introduction.ipynb)  
+  - [Shape manipulation and broadcasting](examples/13_matrix_basics/02_shapes_dimensions.ipynb)  
+  - [Element-wise operations and transposition](examples/13_matrix_basics/03_operations.ipynb)  
   - Boolean indexing and masking  
-- Shapes and dimensions  
-  - Understanding tensor shapes  
-  - Broadcasting semantics  
-  - Shape manipulation (view, reshape, squeeze, unsqueeze)  
-- Basic operations  
-  - Element-wise operations  
-  - Matrix transposition  
-  - Concatenation and stacking  
 - Memory layout and optimization  
   - Row-major vs column-major storage  
   - Stride and contiguity  
