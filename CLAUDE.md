@@ -52,14 +52,18 @@ Each category in the README.md contains detailed sub-topics that should be imple
 4. Eigenvalues and Eigenvectors (04_eigenvalues_eigenvectors)
 5. Vector Spaces and Subspaces (05_vector_spaces_subspaces)
 6. Matrix Properties (06_matrix_properties)
+7. LU Decomposition (07_lu_decomposition)
+8. QR Decomposition (08_qr_decomposition)
+9. Singular Value Decomposition (SVD) (09_singular_value_decomposition)
+10. Cholesky Decomposition (10_cholesky_decomposition)
+11. Tensor Operations and Einstein Notation (11_tensor_operations_einsum)
+12. Visualization Techniques (12_visualization_techniques)
 
 ### Next Examples to Implement
 Based on the README.md, the next topics to implement would be:
-1. LU Decomposition (from the Matrix Decompositions section)
-2. QR Decomposition 
-3. Singular Value Decomposition (SVD)
-4. Cholesky Decomposition
-5. Tensor Operations and Einstein Notation
+1. Basics: Matrix creation, shapes, memory layout (from the Basics section)
+2. Applications: Computer graphics, machine learning (from the Applications section)
+3. Foundations: Special matrices and properties (expanding the Linear Algebra section)
 
 ## Example Source Format
 - Source code for examples is kept in `src/examples/` directory
